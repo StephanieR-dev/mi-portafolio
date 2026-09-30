@@ -1,0 +1,374 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #030814;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* Header & Navegación */
+header {
+    background-color: #070e20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00ff88;
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Tarjetas de sección genéricas */
+.card-seccion {
+    background-color: #0a1329;
+    border: 1px solid #1a2744;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-seccion h2 {
+    color: #00ff88;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 1. SECCIÓN INTRODUCCIÓN (SOBRE MÍ) CON FONDO SOLICITADO */
+#sobre-mi {
+    position: relative;
+    background: linear-gradient(rgba(7, 15, 33, 0.88), rgba(7, 15, 33, 0.94)), 
+                url('https://media.licdn.com/dms/image/v2/C561BAQH83vU0ifWC-w/company-background_10000/company-background_10000/0/1613499258238/galaxylabsstudio_cover?e=2147483647&v=beta&t=dImbkqz21KJkZY6uzuk6UEwyiuotFYLnQZv7Mx9U_h4');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.nombre-titulo {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: #00ff88;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.ubicacion {
+    color: #38bdf8;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.descripcion-intro {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.botones-accion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Botones general */
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primario {
+    background-color: #00e676;
+    color: #030814;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+}
+
+/* 2. PROYECTOS (Acordeones) */
+.acordeon-item {
+    background-color: #0f1c3f;
+    border: 1px solid #1e2d53;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.acordeon-header {
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.acordeon-header i {
+    color: #00ff88;
+}
+
+.acordeon-contenido {
+    padding: 0 16px 16px 16px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* 3. HABILIDADES TÉCNICAS (Barras) */
+.habilidad-item {
+    margin-bottom: 15px;
+}
+
+.habilidad-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+}
+
+.barra-base {
+    width: 100%;
+    background-color: #0d1b3e;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    width: 0%; /* Inicia en 0 para ser animada */
+    height: 100%;
+    background: linear-gradient(90deg, #00ff88, #00bcff);
+    border-radius: 6px;
+    transition: width 1.8s ease-in-out; /* Animación estilo video */
+}
+
+/* 4. APTITUDES */
+.grid-aptitudes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.aptitud-card {
+    background-color: #0f1c3f;
+    border: 1px solid #1e2d53;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.aptitud-card:hover {
+    border-color: #00ff88;
+}
+
+.icono-aptitud {
+    font-size: 1.8rem;
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+.aptitud-card h3 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.aptitud-card p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.indicador-hover {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+/* 5. CERTIFICACIONES Y EDUCACIÓN */
+.cert-item, .edu-item {
+    background-color: #0f1c3f;
+    border: 1px solid #1e2d53;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cert-icon {
+    font-size: 1.5rem;
+    color: #00ff88;
+}
+
+.cert-info h3, .edu-item h3 {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.cert-info p {
+    font-size: 0.85rem;
+    color: #00ff88;
+}
+
+.edu-item {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.institucion {
+    color: #00ff88;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.edu-item p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* 6. CONTACTO */
+.contacto-opcion-card {
+    background-color: #0f1c3f;
+    border: 1px solid #1e2d53;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.contacto-info-linea {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.icono-contacto {
+    font-size: 1.8rem;
+    color: #00ff88;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #ffffff;
+    width: fit-content;
+}
+
+.subtexto-form {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    background-color: #070e20;
+    border: 1px solid #1e2d53;
+    border-radius: 6px;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #00ff88;
+}
+
+.btn-redactar {
+    width: fit-content;
+    margin-top: 5px;
+}
