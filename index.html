@@ -1,274 +1,295 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Web - Stephanie Ximena Huamani Ríos</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome para los íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Web - Stephanie Ximena Huamani Ríos</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome para los íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navegación superior -->
-    <header>
-        <div class="logo">STEPHANIE XIMENA HUAMANI RÍOS</div>
-        <nav>
-            <ul>
-                <li><a href="#sobre-mi">SOBRE MÍ</a></li>
-                <li><a href="#proyectos">PROYECTOS</a></li>
-                <li><a href="#habilidades">HABILIDADES</a></li>
-                <li><a href="#aptitudes">APTITUDES</a></li>
-                <li><a href="#certificaciones">CERTIFICACIONES</a></li>
-                <li><a href="#educacion">EDUCACIÓN</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navegación Adaptable -->
+  <nav class="navbar">
+    <span class="nav-brand">STEPHANIE XIMENA HUAMANI RÍOS</span>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sobre-mi">SOBRE MÍ</a></li>
+      <li><a href="#proyectos">PROYECTOS</a></li>
+      <li><a href="#habilidades">HABILIDADES</a></li>
+      <li><a href="#aptitudes">APTITUDES</a></li>
+      <li><a href="#certificaciones">CERTIFICACIONES</a></li>
+      <li><a href="#educacion">EDUCACIÓN</a></li>
+      <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+  </nav>
 
-    <main class="contenedor-principal">
+  <main class="cv-container">
 
-        <!-- INTRODUCCIÓN (SOBRE MÍ) -->
-        <section id="sobre-mi" class="card-seccion">
-            <h1 class="nombre-titulo">Stephanie Ximena Huamani Ríos</h1>
-            <h2 class="subtitulo">Estudiante de Ingeniería de Soporte de TI</h2>
-            <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
-            
-            <p class="descripcion-intro">
-                Estudiante técnico de Ingeniería de Soporte de TI con una formación práctica orientada a la gestión de infraestructura tecnológica. A lo largo de mi formación, he diseñado e implementado proyectos de conectividad, cableado estructurado y simulación de redes utilizando Cisco Packet Tracer. Cuento con destreza en el diagnóstico de sistemas, configuración de hardware y soporte técnico. Me destaco por mi comunicación asertiva, excelente disposición para el trabajo en equipo y alta adaptabilidad ante los constantes cambios en entornos tecnológicos.
-            </p>
+    <!-- INTRODUCCIÓN (SOBRE MÍ) -->
+    <section id="sobre-mi" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Stephanie Ximena Huamani Ríos</h1>
+        <h2>Estudiante de Ingeniería de Soporte de TI</h2>
+        <p class="tagline"><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
 
-            <div class="botones-accion">
-                <a href="#contacto" class="btn btn-primario"><i class="fas fa-paper-plane"></i> Contactar</a>
-                <a href="#" class="btn btn-secundario"><i class="fas fa-file-pdf"></i> Imprimir / PDF</a>
+        <p class="bio">
+          Estudiante técnico de Ingeniería de Soporte de TI con una formación práctica orientada a la gestión de infraestructura tecnológica. A lo largo de mi formación, he diseñado e implementado proyectos de conectividad, cableado estructurado y simulación de redes utilizando Cisco Packet Tracer. Cuento con destreza en el diagnóstico de sistemas, configuración de hardware y soporte técnico. Me destaco por mi comunicación asertiva, excelente disposición para el trabajo en equipo y alta adaptabilidad ante los constantes cambios en entornos tecnológicos.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn-primary"><i class="fas fa-paper-plane"></i> Contactar</a>
+          <a href="#" class="btn-secondary"><i class="fas fa-file-pdf"></i> Imprimir / PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section id="proyectos" class="section">
+      <h3><i class="fas fa-network-wired"></i> Proyectos Destacados</h3>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span><i class="fas fa-sitemap"></i> Simulación y Configuración de Redes en Cisco Packet Tracer</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Diseño e implementación de topologías de red multienrutador, segmentación de VLANs, subnetworking IP, enrutamiento dinámico RIPv2 y configuración de dispositivos IoT en un entorno empresarial simulado.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span><i class="fas fa-microchip"></i> Sistema de Validación de Monedas con Arduino y Base de Datos</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Desarrollo de un prototipo de conteo y validación de monedas mediante un lector coin acceptor conectado a un Arduino UNO. Integración del sistema con una base de datos (SQL Server / Access) para el registro en tiempo real de transacciones y control de ingresos.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span><i class="fas fa-tools"></i> Diagnóstico, Mantenimiento y Ensamblaje de Hardware (AIO)</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Desensamblaje técnico integral, mantenimiento preventivo y posterior armado de un equipo informático All-In-One (AIO) en laboratorio. Diagnóstico y descarte de fallas a nivel de componentes para garantizar la operatividad óptima del sistema.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS -->
+    <section id="habilidades" class="section">
+      <h3>&lt;/&gt; Habilidades Técnicas</h3>
+
+      <div class="skill-bar">
+        <div class="skill-info">
+          <span>REDES Y CONECTIVIDAD (Cisco, VLANs)</span>
+          <span>80%</span>
+        </div>
+        <div class="progress-line">
+          <div class="progress-fill" style="--hover-width: 80%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-info">
+          <span>SISTEMAS OPERATIVOS Y VIRTUALIZACIÓN</span>
+          <span>75%</span>
+        </div>
+        <div class="progress-line">
+          <div class="progress-fill" style="--hover-width: 75%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-info">
+          <span>PROGRAMACIÓN (C++, Java)</span>
+          <span>75%</span>
+        </div>
+        <div class="progress-line">
+          <div class="progress-fill" style="--hover-width: 75%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-info">
+          <span>BASES DE DATOS (SQL Server, Access)</span>
+          <span>55%</span>
+        </div>
+        <div class="progress-line">
+          <div class="progress-fill" style="--hover-width: 55%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-info">
+          <span>ELECTRÓNICA Y ARDUINO</span>
+          <span>55%</span>
+        </div>
+        <div class="progress-line">
+          <div class="progress-fill" style="--hover-width: 55%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APTITUDES Y HABILIDADES PERSONALES -->
+    <section id="aptitudes" class="section">
+      <h3><i class="fas fa-user-check"></i> Aptitudes y Habilidades Personales</h3>
+
+      <div class="skills-grid">
+        <!-- Carta 1 -->
+        <div class="flip-card">
+          <div class="card-front">
+            <i class="fas fa-comments card-icon"></i>
+            <h4>Comunicación Asertiva</h4>
+            <span class="card-hint">Pasa el mouse / Toca</span>
+          </div>
+          <div class="card-back">
+            <h4>Comunicación Asertiva</h4>
+            <p>Capacidad para transmitir ideas técnicas de forma clara y efectiva ante usuarios y equipos de trabajo.</p>
+          </div>
+        </div>
+
+        <!-- Carta 2 -->
+        <div class="flip-card">
+          <div class="card-front">
+            <i class="fas fa-users card-icon"></i>
+            <h4>Trabajo en Equipo</h4>
+            <span class="card-hint">Pasa el mouse / Toca</span>
+          </div>
+          <div class="card-back">
+            <h4>Trabajo en Equipo</h4>
+            <p>Excelente disposición para colaborar, integrar conocimientos y alcanzar objetivos en proyectos multidisciplinarios.</p>
+          </div>
+        </div>
+
+        <!-- Carta 3 -->
+        <div class="flip-card">
+          <div class="card-front">
+            <i class="fas fa-sync-alt card-icon"></i>
+            <h4>Adaptabilidad al Cambio</h4>
+            <span class="card-hint">Pasa el mouse / Toca</span>
+          </div>
+          <div class="card-back">
+            <h4>Adaptabilidad al Cambio</h4>
+            <p>Alta flexibilidad y rápida respuesta frente a la evolución constante de herramientas y entornos tecnológicos.</p>
+          </div>
+        </div>
+
+        <!-- Carta 4 -->
+        <div class="flip-card">
+          <div class="card-front">
+            <i class="fas fa-tasks card-icon"></i>
+            <h4>Responsabilidad y Organización</h4>
+            <span class="card-hint">Pasa el mouse / Toca</span>
+          </div>
+          <div class="card-back">
+            <h4>Responsabilidad y Organización</h4>
+            <p>Gestión estructurada de tareas, resolución sistemática de incidencias y compromiso con la calidad del servicio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICACIONES -->
+    <section id="certificaciones" class="section">
+      <h3><i class="fas fa-certificate"></i> Certificaciones</h3>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-award"></i></div>
+        <div class="cert-info">
+          <h4>Certificación en Ofimática</h4>
+          <p class="edu-desc">Cetpro Fe y Alegría 23 (2024)</p>
+        </div>
+      </div>
+
+      <div class="cert-item" style="margin-top: 1rem;">
+        <div class="cert-icon"><i class="fas fa-award"></i></div>
+        <div class="cert-info">
+          <h4>Certificado en Cisco Networking Academy (NetAcad)</h4>
+          <p class="edu-desc">Introducción a IoT</p>
+        </div>
+      </div>
+
+      <div class="cert-item" style="margin-top: 1rem;">
+        <div class="cert-icon"><i class="fas fa-award"></i></div>
+        <div class="cert-info">
+          <h4>Certificado en Cisco Networking Academy (NetAcad)</h4>
+          <p class="edu-desc">Introducción a la Ciberseguridad</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section id="educacion" class="section">
+      <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+
+      <div class="edu-item">
+        <h4>Ingeniería de Soporte de TI</h4>
+        <span class="institution">SENATI — En curso</span>
+        <p class="edu-desc" style="margin-top: 0.5rem;">Formación práctica en infraestructura tecnológica, redes de computadoras, ciberseguridad, mantenimiento de hardware y programación.</p>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <h3><i class="fas fa-envelope"></i> Contacto</h3>
+
+      <!-- WhatsApp -->
+      <div class="whatsapp-box">
+        <div class="whatsapp-info">
+          <h4>¿Prefieres una respuesta rápida?</h4>
+          <p>Escríbeme directamente a mi WhatsApp y coordinamos de inmediato.</p>
+        </div>
+        <a href="https://wa.me/51940241152?text=Hola,%20vi%20tu%20CV%20web%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" class="btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+        </a>
+      </div>
+
+      <hr class="contact-divider">
+
+      <!-- Formulario Correo -->
+      <div class="contact-form-container">
+        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-paper-plane"></i> Envíame un mensaje a mi correo</h4>
+        <p class="subtexto-form" style="font-size: 0.85rem; color: var(--subtext-color);">Escribe tus datos y me pondré en contacto contigo lo antes posible.</p>
+
+        <form class="contact-form" action="mailto: ximenahr0531@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
             </div>
-        </section>
-
-
-        <!-- PROYECTOS DESTACADOS (Tal cual la imagen) -->
-        <section id="proyectos" class="card-seccion">
-            <h2><i class="fas fa-network-wired"></i> Proyectos Destacados</h2>
-
-            <div class="acordeon-item">
-                <div class="acordeon-header">
-                    <span><i class="fas fa-sitemap"></i> Simulación y Configuración de Redes en Cisco Packet Tracer</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="acordeon-contenido">
-                    <p>Diseño e implementación de topologías de red multienrutador, segmentación de VLANs, subnetworking IP, enrutamiento dinámico RIPv2 y configuración de dispositivos IoT en un entorno empresarial simulado.</p>
-                </div>
+            <div class="form-group">
+              <label for="apellido">Apellido *</label>
+              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
             </div>
+          </div>
 
-            <div class="acordeon-item">
-                <div class="acordeon-header">
-                    <span><i class="fas fa-microchip"></i> Sistema de Validación de Monedas con Arduino y Base de Datos</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="acordeon-contenido">
-                    <p>Desarrollo de un prototipo de conteo y validación de monedas mediante un lector coin acceptor conectado a un Arduino UNO. Integración del sistema con una base de datos (SQL Server / Access) para el registro en tiempo real de transacciones y control de ingresos.</p>
-                </div>
-            </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
 
-            <div class="acordeon-item">
-                <div class="acordeon-header">
-                    <span><i class="fas fa-tools"></i> Diagnóstico, Mantenimiento y Ensamblaje de Hardware (AIO)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="acordeon-contenido">
-                    <p>Desensamblaje técnico integral, mantenimiento preventivo y posterior armado de un equipo informático All-In-One (AIO) en laboratorio. Diagnóstico y descarte de fallas a nivel de componentes para garantizar la operatividad óptima del sistema.</p>
-                </div>
-            </div>
-        </section>
+          <div class="form-group">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
 
+          <button type="submit" class="btn-primary btn-submit">
+            <i class="fas fa-envelope"></i> Redactar Correo
+          </button>
+        </form>
+      </div>
+    </section>
 
-        <!-- HABILIDADES TÉCNICAS (Barras con animación del video) -->
-        <section id="habilidades" class="card-seccion">
-            <h2>&lt;/&gt; Habilidades Técnicas</h2>
+  </main>
 
-            <div class="habilidad-item">
-                <div class="habilidad-info">
-                    <span>REDES Y CONECTIVIDAD (Cisco, VLANs)</span>
-                    <span>80%</span>
-                </div>
-                <div class="barra-base">
-                    <div class="barra-progreso" data-porcentaje="80%"></div>
-                </div>
-            </div>
-
-            <div class="habilidad-item">
-                <div class="habilidad-info">
-                    <span>SISTEMAS OPERATIVOS Y VIRTUALIZACIÓN</span>
-                    <span>75%</span>
-                </div>
-                <div class="barra-base">
-                    <div class="barra-progreso" data-porcentaje="75%"></div>
-                </div>
-            </div>
-
-            <div class="habilidad-item">
-                <div class="habilidad-info">
-                    <span>PROGRAMACIÓN (C++, Java)</span>
-                    <span>75%</span>
-                </div>
-                <div class="barra-base">
-                    <div class="barra-progreso" data-porcentaje="75%"></div>
-                </div>
-            </div>
-
-            <div class="habilidad-item">
-                <div class="habilidad-info">
-                    <span>BASES DE DATOS (SQL Server, Access)</span>
-                    <span>55%</span>
-                </div>
-                <div class="barra-base">
-                    <div class="barra-progreso" data-porcentaje="55%"></div>
-                </div>
-            </div>
-
-            <div class="habilidad-item">
-                <div class="habilidad-info">
-                    <span>ELECTRÓNICA Y ARDUINO</span>
-                    <span>55%</span>
-                </div>
-                <div class="barra-base">
-                    <div class="barra-progreso" data-porcentaje="55%"></div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- APTITUDES Y HABILIDADES PERSONALES (Tal cual la imagen) -->
-        <section id="aptitudes" class="card-seccion">
-            <h2><i class="fas fa-user-check"></i> Aptitudes y Habilidades Personales</h2>
-
-            <div class="grid-aptitudes">
-                <div class="aptitud-card">
-                    <i class="fas fa-comments icono-aptitud"></i>
-                    <h3>Comunicación Asertiva</h3>
-                    <p>Capacidad para transmitir ideas técnicas de forma clara y efectiva ante usuarios y equipos de trabajo.</p>
-                    <span class="indicador-hover">Pasa el mouse / Toca</span>
-                </div>
-
-                <div class="aptitud-card">
-                    <i class="fas fa-users icono-aptitud"></i>
-                    <h3>Trabajo en Equipo</h3>
-                    <p>Excelente disposición para colaborar, integrar conocimientos y alcanzar objetivos en proyectos multidisciplinarios.</p>
-                    <span class="indicador-hover">Pasa el mouse / Toca</span>
-                </div>
-
-                <div class="aptitud-card">
-                    <i class="fas fa-sync-alt icono-aptitud"></i>
-                    <h3>Adaptabilidad al Cambio</h3>
-                    <p>Alta flexibilidad y rápida respuesta frente a la evolución constante de herramientas y entornos tecnológicos.</p>
-                    <span class="indicador-hover">Pasa el mouse / Toca</span>
-                </div>
-
-                <div class="aptitud-card">
-                    <i class="fas fa-tasks icono-aptitud"></i>
-                    <h3>Responsabilidad y Organización</h3>
-                    <p>Gestión estructurada de tareas, resolución sistemática de incidencias y compromiso con la calidad del servicio.</p>
-                    <span class="indicador-hover">Pasa el mouse / Toca</span>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- CERTIFICACIONES -->
-        <section id="certificaciones" class="card-seccion">
-            <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
-
-            <div class="cert-item">
-                <div class="cert-icon"><i class="fas fa-award"></i></div>
-                <div class="cert-info">
-                    <h3>Certificación en Ofimática</h3>
-                    <p>Cetpro Fe y Alegría 23 (2024)</p>
-                </div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-icon"><i class="fas fa-award"></i></div>
-                <div class="cert-info">
-                    <h3>Certificado en Cisco Networking Academy (NetAcad)</h3>
-                    <p>Introducción a IoT</p>
-                </div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-icon"><i class="fas fa-award"></i></div>
-                <div class="cert-info">
-                    <h3>Certificado en Cisco Networking Academy (NetAcad)</h3>
-                    <p>Introducción a la Ciberseguridad</p>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- EDUCACIÓN -->
-        <section id="educacion" class="card-seccion">
-            <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
-
-            <div class="edu-item">
-                <h3>Ingeniería de Soporte de TI</h3>
-                <span class="institucion">SENATI — En curso</span>
-                <p>Formación práctica en infraestructura tecnológica, redes de computadoras, ciberseguridad, mantenimiento de hardware y programación.</p>
-            </div>
-        </section>
-
-
-        <!-- CONTACTO -->
-        <section id="contacto" class="card-seccion">
-            <h2><i class="fas fa-envelope"></i> Contacto</h2>
-
-            <!-- WhatsApp -->
-            <div class="contacto-opcion-card">
-                <div class="contacto-info-linea">
-                    <i class="fab fa-whatsapp icono-contacto"></i>
-                    <div>
-                        <h3>¿Prefieres una respuesta rápida?</h3>
-                        <p>Escríbeme directamente a mi WhatsApp y coordinamos de inmediato.</p>
-                    </div>
-                </div>
-                <a href="https://wa.me/51940241152?text=Hola,%20vi%20tu%20CV%20web%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" class="btn btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
-                </a>
-            </div>
-
-            <!-- Formulario Correo -->
-            <div class="contacto-opcion-card">
-                <h3><i class="fas fa-paper-plane"></i> Envíame un mensaje a mi correo</h3>
-                <p class="subtexto-form">Escribe tus datos y me pondré en contacto contigo lo antes posible.</p>
-
-                <form class="formulario-contacto" action="mailto: ximenahr0531@gmail.com" method="post" enctype="text/plain">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="apellido">Apellido *</label>
-                            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primario btn-redactar">
-                        <i class="fas fa-envelope"></i> Redactar Correo
-                    </button>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

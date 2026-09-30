@@ -1,374 +1,555 @@
-/* Reset y estilos generales */
+:root {
+  --primary-color: #22c55e;
+  --bg-color: #0b1120;
+  --card-bg: #1e293b;
+  --card-bg-hover: #2d3d54;
+  --text-color: #f8fafc;
+  --subtext-color: #94a3b8;
+  --border-color: #334155;
+  --input-bg: #0f172a;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #030814;
-    color: #e2e8f0;
-    line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-top: 75px;
+  line-height: 1.6;
 }
 
-/* Header & Navegación */
-header {
-    background-color: #070e20;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #1e293b;
+/* Navegación Base (Celulares por defecto) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 65px;
+  background-color: rgba(30, 41, 59, 0.98);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem;
+  z-index: 1000;
 }
 
-.logo {
-    color: #00ff88;
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+.nav-brand {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-nav a {
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: color 0.3s;
+.nav-links {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  background-color: #1e293b;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: none; /* Oculto por defecto en móvil */
+  list-style: none;
 }
 
-nav a:hover {
-    color: #00ff88;
+.nav-links.active {
+  display: flex; /* Se muestra al presionar el menú hamburguesa */
 }
 
-/* Contenedor principal */
-.contenedor-principal {
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+  white-space: nowrap;
 }
 
-/* Tarjetas de sección genéricas */
-.card-seccion {
-    background-color: #0a1329;
-    border: 1px solid #1a2744;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+.nav-links a:hover {
+  color: var(--primary-color);
 }
 
-.card-seccion h2 {
-    color: #00ff88;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.cv-container {
+  max-width: 880px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  width: 100%;
 }
 
-/* 1. SECCIÓN INTRODUCCIÓN (SOBRE MÍ) CON FONDO SOLICITADO */
-#sobre-mi {
-    position: relative;
-    background: linear-gradient(rgba(7, 15, 33, 0.88), rgba(7, 15, 33, 0.94)), 
-                url('https://media.licdn.com/dms/image/v2/C561BAQH83vU0ifWC-w/company-background_10000/company-background_10000/0/1613499258238/galaxylabsstudio_cover?e=2147483647&v=beta&t=dImbkqz21KJkZY6uzuk6UEwyiuotFYLnQZv7Mx9U_h4');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
+.section {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
-.nombre-titulo {
-    font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 5px;
+.section h3 {
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 }
 
-.subtitulo {
-    color: #00ff88;
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+/* Header / Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 1.2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  background-image: url('fondo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.ubicacion {
-    color: #38bdf8;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 17, 32, 0.75);
+  z-index: 1;
 }
 
-.descripcion-intro {
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    text-align: justify;
-    margin-bottom: 25px;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
 }
 
-.botones-accion {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.hero-section h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  word-break: break-word;
 }
 
-/* Botones general */
-.btn {
-    padding: 10px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.2s, background 0.3s;
+.hero-section h2 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
+.tagline {
+  color: var(--subtext-color);
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1rem;
 }
 
-.btn-primario {
-    background-color: #00e676;
-    color: #030814;
+.bio {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.5;
 }
 
-.btn-secundario {
-    background-color: transparent;
-    border: 1px solid #38bdf8;
-    color: #38bdf8;
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
-/* 2. PROYECTOS (Acordeones) */
-.acordeon-item {
-    background-color: #0f1c3f;
-    border: 1px solid #1e2d53;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    overflow: hidden;
+.btn-primary, .btn-secondary {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-.acordeon-header {
-    padding: 16px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    color: #ffffff;
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
 }
 
-.acordeon-header i {
-    color: #00ff88;
+.btn-primary:hover {
+  background-color: #16a34a;
 }
 
-.acordeon-contenido {
-    padding: 0 16px 16px 16px;
-    color: #94a3b8;
-    font-size: 0.9rem;
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
 }
 
-/* 3. HABILIDADES TÉCNICAS (Barras) */
-.habilidad-item {
-    margin-bottom: 15px;
+/* Acordeón de Proyectos */
+.accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  overflow: hidden;
 }
 
-.habilidad-info {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #e2e8f0;
-    margin-bottom: 6px;
+.accordion-header {
+  width: 100%;
+  padding: 0.9rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.88rem;
+  text-align: left;
+  gap: 0.5rem;
 }
 
-.barra-base {
-    width: 100%;
-    background-color: #0d1b3e;
-    height: 12px;
-    border-radius: 6px;
-    overflow: hidden;
+.accordion-header span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.barra-progreso {
-    width: 0%; /* Inicia en 0 para ser animada */
-    height: 100%;
-    background: linear-gradient(90deg, #00ff88, #00bcff);
-    border-radius: 6px;
-    transition: width 1.8s ease-in-out; /* Animación estilo video */
+.accordion-header i.fa-solid {
+  color: var(--primary-color);
 }
 
-/* 4. APTITUDES */
-.grid-aptitudes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 0.9rem;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.aptitud-card {
-    background-color: #0f1c3f;
-    border: 1px solid #1e2d53;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    transition: border-color 0.3s;
+.accordion-content p {
+  padding: 0.8rem 0;
+  color: var(--subtext-color);
+  font-size: 0.85rem;
 }
 
-.aptitud-card:hover {
-    border-color: #00ff88;
+/* Barras de Habilidades */
+.skill-bar {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
-.icono-aptitud {
-    font-size: 1.8rem;
-    color: #00ff88;
-    margin-bottom: 10px;
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 0.5rem;
 }
 
-.aptitud-card h3 {
-    font-size: 0.95rem;
-    color: #ffffff;
-    margin-bottom: 8px;
+.progress-line {
+  height: 8px;
+  width: 100%;
+  background-color: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.aptitud-card p {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    margin-bottom: 12px;
+.progress-fill {
+  display: block;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  width: 0%;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
 }
 
-.indicador-hover {
-    font-size: 0.7rem;
-    color: #64748b;
+.skill-bar:hover .progress-fill,
+.skill-bar.active .progress-fill {
+  width: var(--hover-width);
 }
 
-/* 5. CERTIFICACIONES Y EDUCACIÓN */
-.cert-item, .edu-item {
-    background-color: #0f1c3f;
-    border: 1px solid #1e2d53;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Tarjetas de Aptitudes */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  min-height: 160px;
+  border-radius: 12px;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card-front {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+}
+
+.card-front h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.card-hint {
+  font-size: 0.7rem;
+  color: var(--subtext-color);
+  margin-top: 0.4rem;
+}
+
+.card-back {
+  background-color: var(--card-bg-hover);
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.card-back h4 {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.card-back p {
+  font-size: 0.78rem;
+  color: #e2e8f0;
+  line-height: 1.3;
+}
+
+.flip-card:hover .card-front,
+.flip-card.active .card-front {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.flip-card:hover .card-back,
+.flip-card.active .card-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Certificaciones & Educación */
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .cert-icon {
-    font-size: 1.5rem;
-    color: #00ff88;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  background: rgba(34, 197, 94, 0.1);
+  padding: 0.7rem;
+  border-radius: 8px;
 }
 
-.cert-info h3, .edu-item h3 {
-    font-size: 1rem;
-    color: #ffffff;
+.edu-item h4 {
+  font-size: 1rem;
 }
 
-.cert-info p {
-    font-size: 0.85rem;
-    color: #00ff88;
+.institution {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
-.edu-item {
-    flex-direction: column;
-    align-items: flex-start;
+.edu-desc {
+  color: var(--subtext-color);
+  font-size: 0.85rem;
 }
 
-.institucion {
-    color: #00ff88;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 6px;
+/* Contacto */
+.whatsapp-box {
+  background-color: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 1.2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
 }
 
-.edu-item p {
-    font-size: 0.85rem;
-    color: #94a3b8;
+.whatsapp-info h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
 }
 
-/* 6. CONTACTO */
-.contacto-opcion-card {
-    background-color: #0f1c3f;
-    border: 1px solid #1e2d53;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-}
-
-.contacto-info-linea {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.icono-contacto {
-    font-size: 1.8rem;
-    color: #00ff88;
+.whatsapp-info p {
+  color: var(--subtext-color);
+  font-size: 0.82rem;
 }
 
 .btn-whatsapp {
-    background-color: #25d366;
-    color: #ffffff;
-    width: fit-content;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 0.7rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.subtexto-form {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    margin-bottom: 15px;
+.contact-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1.2rem 0;
 }
 
-.formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 .form-row {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .form-group label {
-    font-size: 0.8rem;
-    color: #cbd5e1;
-    font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
 }
 
 .form-group input, .form-group textarea {
-    background-color: #070e20;
-    border: 1px solid #1e2d53;
-    border-radius: 6px;
-    padding: 10px;
-    color: #ffffff;
-    font-size: 0.85rem;
+  width: 100%;
+  padding: 0.65rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 0.85rem;
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #00ff88;
+  outline: none;
+  border-color: var(--primary-color);
 }
 
-.btn-redactar {
-    width: fit-content;
-    margin-top: 5px;
+.btn-submit {
+  width: 100%;
+}
+
+/* ADAPTACIÓN PARA PANTALLAS GRANDES (TABLETS Y PC / DESKTOP) */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Oculta botón hamburguesa */
+  }
+
+  .nav-links {
+    position: static;
+    display: flex; /* Muestra menú horizontal */
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    gap: 1rem;
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .form-row {
+    flex-direction: row;
+  }
+
+  .btn-submit {
+    width: auto;
+  }
+
+  .whatsapp-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
 }
