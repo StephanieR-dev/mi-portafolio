@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Web - Stephanie Ximena Huamani Ríos</title>
+  <title>CV Web - Ximena Ríos</title>
   <link rel="stylesheet" href="style.css">
   <!-- Font Awesome para los íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +12,7 @@
 
   <!-- Navegación Adaptable -->
   <nav class="navbar">
-    <span class="nav-brand">STEPHANIE XIMENA HUAMANI RÍOS</span>
+    <span class="nav-brand">XIMENA RÍOS</span>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
       <i class="fa-solid fa-bars"></i>
     </button>
@@ -33,7 +33,7 @@
     <section id="sobre-mi" class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Stephanie Ximena Huamani Ríos</h1>
+        <h1>Ximena Ríos</h1>
         <h2>Estudiante de Ingeniería de Soporte de TI</h2>
         <p class="tagline"><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
 
@@ -247,7 +247,7 @@
           <h4>¿Prefieres una respuesta rápida?</h4>
           <p>Escríbeme directamente a mi WhatsApp y coordinamos de inmediato.</p>
         </div>
-        <a href="https://wa.me/51940241152?text=Hola,%20vi%20tu%20CV%20web%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" class="btn-whatsapp">
+        <a href="https://wa.me/51999999999?text=Hola,%20vi%20tu%20CV%20web%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" class="btn-whatsapp">
           <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
         </a>
       </div>
@@ -256,40 +256,50 @@
 
       <!-- Formulario Correo -->
       <div class="contact-form-container">
-        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-paper-plane"></i> Envíame un mensaje a mi correo</h4>
-        <p class="subtexto-form" style="font-size: 0.85rem; color: var(--subtext-color);">Escribe tus datos y me pondré en contacto contigo lo antes posible.</p>
+        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">
+          <i class="fas fa-paper-plane"></i> Envíame un mensaje a mi correo
+        </h4>
+        <p class="subtexto-form" style="font-size: 0.85rem; color: var(--subtext-color);">
+          Escribe tus datos y me pondré en contacto contigo lo antes posible.
+        </p>
 
-        <form class="contact-form" action="mailto: ximenahr0531@gmail.com" method="post" enctype="text/plain">
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/myezrylp" method="POST">
+          <!-- Asunto del correo -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu CV Web">
+
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
               <label for="apellido">Apellido *</label>
-              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+              <input type="text" id="apellido" name="Apellido" placeholder="Tu apellido" required>
             </div>
           </div>
 
           <div class="form-group">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            <input type="email" id="email" name="Email" placeholder="tu@email.com" required>
           </div>
 
           <div class="form-group">
             <label for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            <textarea id="mensaje" name="Mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
           </div>
 
-          <button type="submit" class="btn-primary btn-submit">
-            <i class="fas fa-envelope"></i> Redactar Correo
+          <button type="submit" id="btn-submit" class="btn-primary btn-submit" disabled>
+            <i class="fas fa-paper-plane"></i> <span id="btn-text">Completa los campos</span>
           </button>
+
+          <p id="form-status" style="margin-top: 0.8rem; font-size: 0.85rem; text-align: center;"></p>
         </form>
       </div>
     </section>
 
   </main>
 
+  <!-- Script de JavaScript vinculante -->
   <script src="script.js"></script>
 </body>
 </html>
