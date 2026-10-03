@@ -561,3 +561,26 @@ body {
     font-size: 2.2rem;
   }
 }
+/* Oculta elementos innecesarios al descargar/imprimir en PDF */
+@media print {
+  .navbar, 
+  .hero-buttons, 
+  .whatsapp-box, 
+  .contact-form-container,
+  .menu-toggle {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding-top: 0 !important;
+  }
+
+  .section, .hero-section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+  }
+}
